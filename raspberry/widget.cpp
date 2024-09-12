@@ -7,30 +7,40 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    /* 设置窗口属性 */
+
+    // 初始设置窗口属性
     setWindowTitle("Raspberry Stream Viewer");
     setFixedSize(1024, 600);
 
-    // MJPEG Stream URL
+    // 设置黑色背景，初始界面没有其他控件
+    setStyleSheet("background-color: black;");
+}
+
+void Widget::initializeUI()
+{
+    // 恢复为默认背景色
+    setStyleSheet("");
+
+    // MJPEG Stream URL 网络管理器
     networkManager = new QNetworkAccessManager(this);
 
     // 初始化帧率显示标签
     frameRateLabel = new QLabel(this);
     frameRateLabel->setGeometry(10, 10, 100, 30); // 设置标签位置和大小
-    frameRateLabel->setStyleSheet("color: green;\
-                                  font-size: 16px;     \
-                                  font-weight: bold;   \
-                                  font-style: italic; ");
+    frameRateLabel->setStyleSheet("color: green; font-size: 16px; font-weight: bold; font-style: italic;");
 
     // 初始化帧率计时器
     fpsTimer = new QTimer(this);
     connect(fpsTimer, &QTimer::timeout, this, &Widget::updateFrameRate);
     fpsTimer->start(1000); // 每秒更新一次帧率
 
-    tcp_thread = new tcp_server_thread(NULL);
-    /* connect http server endian*/
+    // 创建并启动 TCP 线程
+    tcp_thread = new tcp_server_thread(nullptr);
+
+    // 连接 HTTP 服务器
     connect_http_server();
 }
+
 
 Widget::~Widget()
 {

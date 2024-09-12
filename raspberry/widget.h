@@ -34,6 +34,8 @@ public:
 
     void connect_http_server(void);
     void updateFrameRate(void);
+    void initializeUI(void);
+
 private:
     Ui::Widget *ui;
 
