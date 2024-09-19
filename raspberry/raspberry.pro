@@ -20,20 +20,24 @@ SOURCES += \
     login/loginwidget.cpp \
     main.cpp \
     tcp_server_thread.cpp \
-    user/userwindow.cpp \
+    user/userwidget.cpp \
     widget.cpp
 
 HEADERS += \
     login/loginwidget.h \
     tcp_server_thread.h \
-    user/userwindow.h \
+    user/userwidget.h \
     widget.h
 
 FORMS += \
-    userwindow.ui \
+    user/userwidget.ui \
     widget.ui
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resources.qrc

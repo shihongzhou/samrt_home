@@ -1,0 +1,10 @@
+release/loginwidget.o
+release/main.o
+release/tcp_server_thread.o
+release/userwidget.o
+release/widget.o
+release/qrc_resources.o
+release/moc_loginwidget.o
+release/moc_tcp_server_thread.o
+release/moc_userwidget.o
+release/moc_widget.o

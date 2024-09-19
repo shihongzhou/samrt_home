@@ -1,0 +1,10 @@
+debug/loginwidget.o
+debug/main.o
+debug/tcp_server_thread.o
+debug/userwidget.o
+debug/widget.o
+debug/qrc_resources.o
+debug/moc_loginwidget.o
+debug/moc_tcp_server_thread.o
+debug/moc_userwidget.o
+debug/moc_widget.o

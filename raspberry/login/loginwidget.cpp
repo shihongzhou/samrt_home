@@ -1,6 +1,5 @@
 #include "loginwidget.h"
 
-
 LoginWidget::LoginWidget(QWidget *parent)
     : QWidget{parent}
 {
@@ -31,7 +30,7 @@ LoginWidget::LoginWidget(QWidget *parent)
 void LoginWidget::handleLogin()
 {
     // 简单验证逻辑，可以根据需要替换为网络请求或数据库验证
-    if (usernameInput->text() == "a" && passwordInput->text() == "1") {
+    if (usernameInput->text() == "1" && passwordInput->text() == "1") {
         emit loginSuccessful();  // 触发登录成功信号
     } else {
         statusLabel->setText("Invalid login. Try again.");

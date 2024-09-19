@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>resources/message_icon.png</file>
+        <file>resources/network_online.png</file>
+        <file>resources/user_avatar.png</file>
+        <file>resources/logo.png</file>
+    </qresource>
+</RCC>
